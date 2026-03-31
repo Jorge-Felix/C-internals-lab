@@ -1,0 +1,1 @@
+gcc -nostdlib -nodefaultlibs -Os -fno-stack-protector -fno-exceptions -fno-unwind-tables -fno-ident -m32 -o loader.exe loader.c -Wl,--subsystem,windows -Wl,-e,_loader_main
