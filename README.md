@@ -1,7 +1,3 @@
-Aquí tienes una versión más neutral y limpia, sin referencias a técnicas específicas:
-
----
-
 # c-internals-lab
 
 A collection of low-level C experiments focused on understanding how software interacts with the system. This repository is intended for learning, research, and practical exploration through small, focused programs.
