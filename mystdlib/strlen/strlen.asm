@@ -1,15 +1,21 @@
-size_t strlen(const char *str);
-
 default rel
 
+;size_t strlen(const char *str);
 section .text
-global strlen
-strlen:
-    xor rax, rax        ; zero rax
-.loop:
-    cmp byte [rcx + rax], 0
-    je .done
-    inc rax
-    jmp .loop
-.done:
+global optistrlen
+optistrlen:
+    mov rdi, rcx
+    mov r9, rcx
+
+    xor al, al
+    mov rcx, -1
+
+    cld  ; clear df
+
+    repne scasb 
+
+    sub rdi, r9
+    dec rdi
+
+    mov rax, rdi
     ret
